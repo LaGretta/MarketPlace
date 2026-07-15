@@ -13,7 +13,6 @@
 
     <ItemGroup>
       <Folder Include="Service\" />
-      <Folder Include="Validators\" />
     </ItemGroup>
 
     <PropertyGroup>
