@@ -12,9 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Interfaces\Repository\" />
-      <Folder Include="Interfaces\Security\" />
-      <Folder Include="Interfaces\Service\" />
       <Folder Include="Mapping\" />
       <Folder Include="Service\" />
       <Folder Include="Validators\" />
