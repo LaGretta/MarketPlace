@@ -9,7 +9,8 @@ public interface IProductRepository
         string? sortBy, int page, int pageSize, CancellationToken ct);
     
     Task<Product?> GetProductById(int productId , CancellationToken ct);
-    Task<List<Product>> GetMyProduct(int userId , CancellationToken ct);
+    Task<Product?> GetMyProductById(int userId,int productId , CancellationToken ct);
+    Task<List<Product>> GetMyProducts(int userId , CancellationToken ct);
     Task CreateProduct(Product product , CancellationToken ct);
     void UpdateProduct(Product product);
     void DeleteProduct(Product product);
