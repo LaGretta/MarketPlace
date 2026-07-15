@@ -12,7 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Mapping\" />
       <Folder Include="Service\" />
       <Folder Include="Validators\" />
     </ItemGroup>
