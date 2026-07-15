@@ -16,4 +16,6 @@ public class Product
     
     public int SellerId { get; set; }
     public User Seller { get; set; } = null!;  
+    
+    public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 }
