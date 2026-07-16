@@ -17,10 +17,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\MarketPlace.Application\MarketPlace.Application.csproj" />
       <ProjectReference Include="..\MarketPlace.Infrastructure\MarketPlace.Infrastructure.csproj" />
     </ItemGroup>
