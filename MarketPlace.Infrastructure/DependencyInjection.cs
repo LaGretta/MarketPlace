@@ -16,7 +16,9 @@ public static  class DependencyInjection
         this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<AppDbContext>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlServer(
+                configuration.GetConnectionString("DefaultConnection"),
+                sql => sql.EnableRetryOnFailure()));
 
         services.AddScoped<IAuthRepository, AuthRepository>();
         services.AddScoped<ICategoryRepository, CategoryRepository>();
