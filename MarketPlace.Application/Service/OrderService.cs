@@ -11,9 +11,9 @@ namespace MarketPlace.Application.Service;
 public class OrderService : IOrderService
 {
     private readonly IOrderRepository _orderRepository;
+    private readonly IProductRepository _productRepository;
     private readonly IMapper _mapper;
     private readonly IUnitOfWork _unitOfWork;
-    private readonly IProductRepository _productRepository;
 
     public OrderService(IOrderRepository orderRepository
         , IMapper mapper
