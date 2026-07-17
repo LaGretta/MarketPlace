@@ -24,6 +24,7 @@
 - [API Endpoints](#-api-endpoints)
 - [Getting Started](#-getting-started)
 - [Frontend](#-frontend)
+- [Testing](#-testing)
 - [Project Structure](#-project-structure)
 - [Notes & Known Limitations](#-notes--known-limitations)
 
@@ -396,6 +397,36 @@ const API_BASE = "http://localhost:5222";     // local
 ```
 
 > 💡 Because the frontend runs on a different origin than the API, the API must send **CORS** headers for the browser to accept its responses. See [limitations](#-notes--known-limitations) below.
+
+---
+
+## 🧪 Testing
+
+The **application service layer** is covered by **unit tests** in the [`MarketPlace.Tests`](MarketPlace.Tests) project.
+
+- **Services under test:** `AuthService`, `ProductService`, `OrderService`, `CategoryService`.
+- **Fully isolated** — repositories, Unit of Work, AutoMapper, the password hasher, and the JWT generator are all **mocked**, so the tests hit **no real database**.
+- **Both happy paths and failure paths** are exercised, including the exceptions the services throw:
+
+| Scenario | Expected behavior |
+|----------|-------------------|
+| Resource not found | `KeyNotFoundException` |
+| Invalid operation (e.g. insufficient stock, cancelling a shipped order) | `InvalidOperationException` |
+| Login with wrong credentials | `UnauthorizedAccessException` |
+
+### Stack
+
+| Tool | Role |
+|------|------|
+| **xUnit** | Test framework |
+| **Moq** | Mocking dependencies |
+| **FluentAssertions** | Expressive assertions |
+
+### Run the tests
+
+```bash
+dotnet test
+```
 
 ---
 
